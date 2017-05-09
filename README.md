@@ -6,7 +6,9 @@ This image contains these softwares:
 - PostgreSQL
 - Redis
 - Ansible (for deploying)
-- Some lib for building Python modules
+- SSH client
+- Rsync
+- Some header (dev) packages for building Python modules
 
 This image doesn't contain Django. Django and other Python modules should be installed separately in container.
 
