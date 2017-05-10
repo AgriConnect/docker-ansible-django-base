@@ -3,8 +3,10 @@ FROM alpine:3.5
 MAINTAINER Nguyễn Hồng Quân <ng.hong.quan@gmail.com>
 
 
+ENV LANG en_US.UTF-8
+ENV PGDATA /var/lib/postgresql/data
 # Ref: https://github.com/William-Yeh/docker-ansible/
-RUN apk --update add su-exec openrc postgresql && \
+RUN apk --update add su-exec postgresql && \
     apk add python3 build-base redis postgresql rsync && \
     apk add sshpass openssh-client openssl ca-certificates && \
     apk add postgresql-dev libffi-dev python3-dev jpeg-dev yaml-dev && \
@@ -14,6 +16,6 @@ RUN apk --update add su-exec openrc postgresql && \
     rm -rf /var/cache/apk/* && rm -rf /root/.cache/pip
 
 # Later on, please use su-exec to switch to 'postgres' user if need to do PostgreSQL tasks
-
-# default command: display Ansible version
-CMD [ "ansible-playbook", "--version" ]
+COPY start-postgres.sh /start-postgres.sh
+RUN ["/start-postgres.sh"]
+# In your app, should run "su-exec postgres pg_ctl start" to start Postgres server
