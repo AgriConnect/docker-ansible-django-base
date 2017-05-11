@@ -2,6 +2,7 @@ Docker image for testing and depoying Django web app.
 
 This image contains these softwares:
 
+- [su-exec](https://github.com/ncopa/su-exec), simple replacement for `sudo`
 - Python 3
 - PostgreSQL
 - Redis
