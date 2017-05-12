@@ -9,6 +9,7 @@ This image contains these softwares:
 - Ansible (for deploying)
 - SSH client
 - Rsync
+- Pytest, pytest-django, pytest-flakes
 - Some header (dev) packages for building Python modules
 
 This image doesn't contain Django. Django and other Python modules should be installed separately in container.
