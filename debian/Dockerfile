@@ -2,10 +2,11 @@ FROM debian:9
 
 MAINTAINER Nguyễn Hồng Quân <ng.hong.quan@gmail.com>
 
-
-ENV LANG en_US.UTF-8
+RUN sed -i -e 's/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen && \
+    dpkg-reconfigure --frontend=noninteractive locales && \
+    update-locale LANG=en_US.UTF-8
 # Ref: https://github.com/William-Yeh/docker-ansible/
-RUN apt-get update && apt-get install -y rsync wget python3 && \
+RUN apt-get update && apt-get install -y rsync wget python3-pip && \
     apt-get install -y sshpass openssh-client openssl ca-certificates && \
     apt-get install -y libpq-dev libffi-dev python3-dev libjpeg-dev && \
     pip3 install -U pip wheel && pip3 install cffi && \
