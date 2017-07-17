@@ -2,8 +2,7 @@ FROM debian:9
 
 MAINTAINER Nguyễn Hồng Quân <ng.hong.quan@gmail.com>
 
-RUN sed -i -e 's/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen && \
-    dpkg-reconfigure --frontend=noninteractive locales && \
+RUN dpkg-reconfigure --frontend=noninteractive locales && \
     update-locale LANG=en_US.UTF-8
 # Ref: https://github.com/William-Yeh/docker-ansible/
 RUN apt-get update && apt-get install -y rsync wget python3-pip && \
