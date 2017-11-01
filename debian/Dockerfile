@@ -1,4 +1,4 @@
-FROM debian:9
+FROM debian:buster
 
 MAINTAINER Nguyễn Hồng Quân <ng.hong.quan@gmail.com>
 
