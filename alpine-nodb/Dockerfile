@@ -12,6 +12,6 @@ RUN apk --update add bash python3 build-base rsync && \
     pip3 install cryptography && pip3 install cowpy ansible && \
     pip3 install Pillow psycopg2 pytest-flakes pytest-django && \
     mkdir -p /etc/ansible && echo 'localhost' > /etc/ansible/hosts && \
-    ln -s /usr/local/bin/cowpy /usr/local/bin/cowsay && \
+    ln -s /usr/local/bin/cowpy /usr/bin/cowsay && \
     rm -rf /var/cache/apk/* && rm -rf /root/.cache/pip && \
     sed -i -e "s/bin\/ash/bin\/bash/" /etc/passwd
