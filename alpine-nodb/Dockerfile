@@ -9,9 +9,8 @@ RUN apk --update add bash python3 build-base rsync && \
     apk add sshpass openssh-client openssl ca-certificates && \
     apk add postgresql-dev libffi-dev python3-dev jpeg-dev yaml-dev zlib-dev linux-headers && \
     pip3 install -U pip wheel && pip3 install cffi && \
-    pip3 install cryptography && pip3 install cowpy ansible && \
+    pip3 install cryptography && pip3 install ansible && \
     pip3 install Pillow psycopg2 pytest-flakes pytest-django && \
     mkdir -p /etc/ansible && echo 'localhost' > /etc/ansible/hosts && \
-    ln -s /usr/bin/cowpy /usr/bin/cowsay && \
     rm -rf /var/cache/apk/* && rm -rf /root/.cache/pip && \
     sed -i -e "s/bin\/ash/bin\/bash/" /etc/passwd
