@@ -6,7 +6,7 @@ MAINTAINER Nguyễn Hồng Quân <ng.hong.quan@gmail.com>
 ENV LANG en_US.UTF-8
 # Ref: https://github.com/William-Yeh/docker-ansible/
 RUN apk --update add bash python3 build-base rsync && \
-    apk add sshpass openssh-client openssl ca-certificates && \
+    apk add sshpass openssh-client openssl ca-certificates git && \
     apk add postgresql-dev libffi-dev python3-dev jpeg-dev yaml-dev zlib-dev linux-headers && \
     pip3 install -U pip wheel && pip3 install cffi && \
     pip3 install cryptography && pip3 install ansible && \
