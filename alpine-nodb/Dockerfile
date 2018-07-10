@@ -8,8 +8,9 @@ ENV LANG en_US.UTF-8
 RUN apk --update add bash python3 build-base rsync && \
     apk add sshpass openssh-client openssl ca-certificates git && \
     apk add postgresql-dev libffi-dev python3-dev jpeg-dev yaml-dev zlib-dev linux-headers && \
-    pip3 install -U pip wheel && pip3 install cffi && \
-    pip3 install cryptography && pip3 install ansible && \
+    pip3 install -U pip wheel && pip3 install cffi --extra-index-url https://repo.fury.io/agriconnect/ && \
+    pip3 install cryptography --extra-index-url https://repo.fury.io/agriconnect/ && \
+    pip3 install ansible && \
     pip3 install Pillow psycopg2 pytest-flakes pytest-django && \
     mkdir -p /etc/ansible && echo 'localhost' > /etc/ansible/hosts && \
     rm -rf /var/cache/apk/* && rm -rf /root/.cache/pip && \
