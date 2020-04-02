@@ -1,4 +1,5 @@
-FROM alpine:latest
+FROM alpine:3.10
+# Pin Python at 3.7
 
 MAINTAINER Nguyễn Hồng Quân <ng.hong.quan@gmail.com>
 
