@@ -8,7 +8,7 @@ ENV PATH "/root/.poetry/bin:${PATH}"
 # Ref: https://github.com/William-Yeh/docker-ansible/
 RUN apk --update add bash python3 py3-pip build-base rsync fd && \
     apk add sshpass openssh-client openssl ca-certificates git && \
-    apk add postgresql-dev libffi-dev python3-dev jpeg-dev yaml-dev zlib-dev linux-headers && \
+    apk add postgresql-dev libffi-dev python3-dev jpeg-dev yaml-dev zlib-dev linux-headers gdal && \
     pip3 install -U pip wheel && pip3 install cffi --extra-index-url https://pypi.agriconnect.vn/musl/simple/ && \
     pip3 install cryptography --extra-index-url https://pypi.agriconnect.vn/musl/simple/ && \
     pip3 install ansible && \
