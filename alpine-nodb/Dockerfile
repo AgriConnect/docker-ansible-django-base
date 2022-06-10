@@ -1,4 +1,4 @@
-FROM alpine:3.15
+FROM alpine:3.16
 
 MAINTAINER Nguyễn Hồng Quân <ng.hong.quan@gmail.com>
 
@@ -11,7 +11,7 @@ RUN apk --update add bash python3 py3-pip build-base rsync fd && \
     apk add postgresql-dev libffi-dev python3-dev jpeg-dev yaml-dev zlib-dev linux-headers gdal && \
     pip3 install -U pip wheel && pip3 install cffi --extra-index-url https://pypi.agriconnect.vn/musl/simple/ && \
     pip3 install cryptography --extra-index-url https://pypi.agriconnect.vn/musl/simple/ && \
-    pip3 install poetry && \
+    pip3 install --ignore-installed poetry && \
     pip3 install ansible && \
     ln -s /usr/bin/python3 /usr/local/bin/python && \
     mkdir -p /etc/ansible && echo 'localhost' > /etc/ansible/hosts && \
