@@ -6,7 +6,7 @@ MAINTAINER Nguyễn Hồng Quân <ng.hong.quan@gmail.com>
 ENV LANG en_US.UTF-8
 ENV PATH "/root/.poetry/bin:${PATH}"
 # Ref: https://github.com/William-Yeh/docker-ansible/
-RUN apk --update add bash python3 py3-pip build-base rsync fd && \
+RUN apk --update add bash python3 py3-pip build-base tzdata rsync fd && \
     apk add sshpass openssh-client openssl ca-certificates git && \
     apk add postgresql-dev libffi-dev python3-dev jpeg-dev yaml-dev zlib-dev linux-headers gdal && \
     pip3 install -U pip wheel && pip3 install cffi --extra-index-url https://pypi.agriconnect.vn/musl/simple/ && \
