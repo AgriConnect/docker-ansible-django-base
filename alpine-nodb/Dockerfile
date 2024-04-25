@@ -1,10 +1,11 @@
-FROM alpine:3.16
+FROM alpine:3.19
 
 MAINTAINER Nguyễn Hồng Quân <ng.hong.quan@gmail.com>
 
 
 ENV LANG en_US.UTF-8
-ENV PATH "/root/.poetry/bin:${PATH}"
+ENV PATH "/root/.local/bin:${PATH}"
+ENV PIP_BREAK-SYSTEM-PACKAGES=1
 # Ref: https://github.com/William-Yeh/docker-ansible/
 RUN apk --update add bash python3 py3-pip build-base tzdata rsync fd && \
     apk add sshpass openssh-client openssl ca-certificates git && \
