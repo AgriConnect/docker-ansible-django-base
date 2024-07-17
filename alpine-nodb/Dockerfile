@@ -1,10 +1,10 @@
 FROM alpine:3.20.1
 
-MAINTAINER Nguyễn Hồng Quân <ng.hong.quan@gmail.com>
+LABEL maintainer="Nguyễn Hồng Quân <ng.hong.quan@gmail.com>"
 
 
-ENV LANG en_US.UTF-8
-ENV PATH "/root/.local/bin:${PATH}"
+ENV LANG="en_US.UTF-8"
+ENV PATH="/root/.local/bin:${PATH}"
 ENV PIP_BREAK-SYSTEM-PACKAGES=1
 # Ref: https://github.com/William-Yeh/docker-ansible/
 RUN apk --update add bash python3 py3-pip build-base tzdata rsync fd && \
