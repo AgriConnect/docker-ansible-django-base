@@ -1,4 +1,4 @@
-FROM alpine:3.21
+FROM alpine:3.20.2
 
 LABEL maintainer="Nguyễn Hồng Quân <ng.hong.quan@gmail.com>"
 
